@@ -35,6 +35,7 @@ int main(void) {
     scan<<<(SIZE + BLOCK_SIZE - 1) / BLOCK_SIZE, BLOCK_SIZE>>>(input, output, SIZE);
   // check for errors
     cudaDeviceSynchronize();
+
     cudaError_t error = cudaGetLastError();
     if (error != cudaSuccess) {
         std::cerr << "CUDA Error: " << cudaGetErrorString(error) << std::endl;
