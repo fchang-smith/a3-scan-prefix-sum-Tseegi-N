@@ -1,7 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/time.h>
+#include <time.h>
+#define SIZE 100000
 
-#define SIZE 1000000
+  // clock func
+double  get_clock() {
+  struct timeval tv;
+  int ok;
+  ok = gettimeofday(&tv, NULL);
+  if (ok<0) {
+    //printf('gettimeofday error\n');
+  }
+  return (tv.tv_sec * 1.0 + tv.tv_usec * 1.0E-6);
+}
 
 int main() {
   // allocate memory
@@ -13,6 +25,10 @@ int main() {
     input[i] = 1;
    }
 
+  // Get time
+  double time0, time1;
+  time0 = get_clock();
+
   // do the scan
   for (int i = 0; i < SIZE; i++) {
    int value = 0;
@@ -21,6 +37,10 @@ int main() {
    }
     output[i] = value;
   }
+
+  // Final time
+  time1 = get_clock();
+  printf("time: %f seconds\n", (time1-time0));
 
   // check results
   //for (int i = 0; i < SIZE; i++) {

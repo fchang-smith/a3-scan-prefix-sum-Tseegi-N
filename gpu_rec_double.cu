@@ -4,7 +4,7 @@
 
 // define constants
 #define BLOCK_SIZE 256
-#define SIZE 10000
+#define SIZE 1000000
 
 // function to apply scan on arrays
 __global__ void scan(int *in, int *out, int n){
