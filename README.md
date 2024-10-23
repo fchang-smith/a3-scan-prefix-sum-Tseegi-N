@@ -1,6 +1,6 @@
 # A3. Scan/Prefix Sum
 
-Due Date: 10/23 at midnight
+Due Date: 10/24~~23~~ at midnight
 
 ## Instructions
 
